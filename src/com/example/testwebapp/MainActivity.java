@@ -4,12 +4,15 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -19,6 +22,7 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity  {
 
 	Button btn1,btn2,btn3;
+	Button btn_exit;
 	Fragment fragment;
 	
 	@Override
@@ -29,6 +33,7 @@ public class MainActivity extends FragmentActivity  {
 		btn1 = (Button)findViewById(R.id.btn1);
         btn2 = (Button)findViewById(R.id.btn2);
         btn3 = (Button)findViewById(R.id.btn3);
+        btn_exit = (Button)findViewById(R.id.exit);
         
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
@@ -40,8 +45,10 @@ public class MainActivity extends FragmentActivity  {
         btn1.setOnClickListener(btnOnClickListener);
         btn2.setOnClickListener(btnOnClickListener);
         btn3.setOnClickListener(btnOnClickListener);
+        
 
 	}
+	
 	Button.OnClickListener btnOnClickListener = new Button.OnClickListener(){
 		@Override
 		public void onClick(View v){
@@ -70,12 +77,40 @@ public class MainActivity extends FragmentActivity  {
 			
 		}
 	};
-	
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		
 		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	@Override 
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch(item.getItemId()){
+			case R.id.exit: 
+				new AlertDialog.Builder(MainActivity.this).setTitle(R.string.exit_menu)
+				.setMessage(R.string.exit_message)
+				.setPositiveButton(R.string.exit_submit, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						// TODO Auto-generated method stub
+						MainActivity.this.finish();
+					}
+				})
+				.setNegativeButton(R.string.exit_cancel, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						// TODO Auto-generated method stub
+						dialog.cancel();
+					}
+				})
+				.setCancelable(false)
+				.show();
+			
+		}
 		return true;
 	}
 

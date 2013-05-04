@@ -12,4 +12,10 @@
 	<string name="ShowBtn1">Tag1</string>
 	<string name="ShowBtn2">Tag2</string>
 	<string name="ShowBtn3">Tag3</string>
+	<string name="exit_menu">Exit</string>
+	<string name="exit_title">EXIT</string>
+	<string name="exit_message">Do you want to exit?</string>
+	<string name="exit_submit">YES</string>
+	<string name="exit_cancel">NO</string>
+	
 </resources>
