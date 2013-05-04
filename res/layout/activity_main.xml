@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:background="#000000"
+	    android:orientation="horizontal" >
+
+		<Button
+	        android:id="@+id/btn1"
+	        android:layout_weight="1"
+	        android:layout_width = "0dp"
+	        android:layout_height = "fill_parent"
+	        android:text = "@string/ShowBtn1"
+	        android:textColor="#ffffff"
+	        android:background="#910626"
+	   		/>
+		
+		<Button
+	        android:id="@+id/btn2"
+	        android:layout_weight="1"
+	        android:layout_width = "0dp"
+	        android:layout_height = "fill_parent"
+	        android:text = "@string/ShowBtn2"
+	        android:textColor="#ffff66"
+	        android:background="#910626"
+	   		/>
+		
+		<Button
+	        android:id="@+id/btn3"
+	        android:layout_weight="1"
+	        android:layout_width = "0dp"
+	        android:layout_height = "fill_parent"
+	        android:text = "@string/ShowBtn3"
+	        android:textColor="#009966"
+	        android:background="#910626"
+	   		/>
+	</LinearLayout>
+	
+	<LinearLayout 
+	    android:id="@+id/FirstFragment"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="12"
+	    android:orientation="horizontal"
+	    >
+	   
+	</LinearLayout>
+	
+</LinearLayout>
+    
